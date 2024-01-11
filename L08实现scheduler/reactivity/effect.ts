@@ -1,8 +1,11 @@
 
 class ReactiveEffect{
   private _fn: any
-  constructor(fn, public scheduler?){
+  public scheduler?: Function |undefined
+
+  constructor(fn, scheduler?: Function){
     this._fn = fn
+    this.scheduler = scheduler
   }
 
   run(){
